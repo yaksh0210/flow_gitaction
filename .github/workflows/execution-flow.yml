@@ -88,7 +88,7 @@ jobs:
          echo "Something is wrong"
          echo "${{ toJSON(github) }}"
   issues:
-     needs: report 
+     needs: [report,deploy] 
      runs-on: ubuntu-latest
      steps:
        - name: Solution to issues
