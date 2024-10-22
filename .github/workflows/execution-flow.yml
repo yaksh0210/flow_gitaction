@@ -59,6 +59,7 @@ jobs:
         id: build-website
         run: npm run build
       - name: Upload artifacts
+        id: upload-files
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
@@ -72,6 +73,7 @@ jobs:
         with:
           name: dist-files
       - name: Output contents
+        if: steps.test-build.outcome == "success"
         run: ls
       - name: Deploy
         run: echo "Deploying...."
