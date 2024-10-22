@@ -73,7 +73,6 @@ jobs:
         with:
           name: dist-files
       - name: Output contents
-        if: steps.test-build.outcome == "success"
         run: ls
       - name: Deploy
         run: echo "Deploying...."
