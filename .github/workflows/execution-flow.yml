@@ -87,3 +87,12 @@ jobs:
         run: |
          echo "Something is wrong"
          echo "${{ toJSON(github) }}"
+  issues:
+     needs: report 
+     runs-on: ubuntu-latest
+     steps:
+       - name: Solution to issues
+         run: |
+           echo "Follow the given documentation"
+           echo "https://gitaction.documentation"
+
